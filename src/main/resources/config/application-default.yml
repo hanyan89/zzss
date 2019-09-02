@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+project:
+  version: 1.0-SNAPSHOT
+
+#管理密码 32位小写MD5值
+admin:
+  password:
+   md5:
+
+#规则json文件地址（支持URL和本地路径）本地路径以main/resources为根目录
+#修改规则后 访问重载规则API可热刷新配置
+rule:
+  json:
+    uri: https://raw.githubusercontent.com/dengyuhan/magnetW/master/src/main/resources/rule.json
+#    uri: rule.json
+
+search:
+  placeholder: 钢铁侠    #搜索框占位文字
+  result:
+    filter:
+      enabled: false    #是否开启搜索结果屏蔽功能 屏蔽的数据存储的文件将创建在工程父目录
+
+version:
+  link:                 #版本号链接（点击版本号要跳转的链接）
+
+preload:
+  enabled: true         #是否开启预加载（开启后会异步缓存下一页，加快下一页的访问速度但会增加性能消耗）
+
+
+trackers:
+  enabled: true       #是否开启tracker服务器 开启后会在新增一列拼接了tracker服务器列表的磁力链接
+  update:             #自动更新tracker列表的URL
+    url: https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt
+    interval:
+      hour: 24        #自动更新tracker列表的间隔时间（单位:小时）
+
+#不蒜子统计
+busuanzi:
+  enabled: false
+  show: false       #是否在页面上显示(当busuanzi.enabled: true，PC版页面生效)
+
+#是否忽略需要代理才能访问的源站
+proxy:
+  ignore: true
+  enabled: false
+  host: 127.0.0.1
+  port: 1087
+spring:
+  mvc:
+    view:
+      prefix:
+      suffix: .jsp
