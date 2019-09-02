@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 80
 
 project:
   version: 1.0-SNAPSHOT
@@ -10,7 +10,7 @@ admin:
    md5:
 
 #规则json文件地址（支持URL和本地路径）本地路径以main/resources为根目录
-#修改规则后 访问重载规则API可热刷新配置
+#修改规则后 访问重载规则API可热刷新配置SessionIdGeneratorBase
 rule:
   json:
     uri: https://raw.githubusercontent.com/dengyuhan/magnetW/master/src/main/resources/rule.json
